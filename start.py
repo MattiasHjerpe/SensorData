@@ -2,8 +2,6 @@ import pandas as pd
 import matplotlib.pyplot as plt
 from scipy import stats
 
-
-# Display a menu
 def print_average_sensor_data():
     # Load CSV file into data variable
     data = pd.read_csv('data.csv')
@@ -54,6 +52,7 @@ def print_unedited_graph():
     plt.show()
 
 
+# Prints a menu and asks for user input
 while True:
     print("Menu:")
     print("1. Print average sensor data")
