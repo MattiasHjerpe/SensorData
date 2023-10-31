@@ -2,6 +2,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 from scipy import stats
 
+
 # Display a menu
 def print_average_sensor_data():
     # Load CSV file into data variable
@@ -18,7 +19,7 @@ def print_average_sensor_data():
     # Filter 'Baro' data after 3.5 seconds
     data_no_outliers_baro = data_no_outliers[data_no_outliers['Time'] <= 3.5]
 
-    # Plot 'Baro' and 'Lidar' data
+    # Set size of graph
     plt.figure(figsize=(10, 6))
 
     # Plot the average data
@@ -39,20 +40,18 @@ def print_unedited_graph():
     # Load CSV file into data variable
     data = pd.read_csv('data.csv')
 
-    # Plot the data
+    # Plot the data and set the size of the graph
     plt.figure(figsize=(10, 6))
-
-    # Attempt to plot data (assuming column names are correct)
     plt.plot(data['Time'], data['Baro'], label='Baro')
     plt.plot(data['Time'], data['Lidar'], label='Lidar')
 
+    # Display the graph
     plt.xlabel('Time(sec)')
     plt.ylabel('Altitude(m)')
     plt.title('Sensor Data')
     plt.legend()
     plt.grid(True)
     plt.show()
-
 
 
 while True:
@@ -71,8 +70,3 @@ while True:
         break
     else:
         print("Invalid choice. Please enter a valid option.")
-
-
-
-
-
